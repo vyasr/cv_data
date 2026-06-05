@@ -7,14 +7,14 @@ import pytest
 from pydantic import ValidationError
 from ruamel.yaml import YAML
 
-from scripts.lib.schema import (
+from professional_data import ProfessionalData
+from professional_data.schema import (
     Affiliation,
     Education,
     Experience,
     Grant,
     Honor,
     PersonalInfo,
-    ProfessionalData,
     Project,
     PublicationRef,
     PresentationRef,
