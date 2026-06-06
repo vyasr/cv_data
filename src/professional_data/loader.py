@@ -6,11 +6,11 @@ from ruamel.yaml import YAML
 
 from .schema import ProfessionalData
 
-_DEFAULT_DATA_PATH = Path(__file__).parent.parent.parent / "data" / "professional.yaml"
+_DEFAULT_DATA_PATH = Path(__file__).parent.parent.parent / "professional.yaml"
 
 
 def load_professional_data(path: str | Path | None = None) -> ProfessionalData:
-    """Load and validate professional.yaml. Defaults to bundled data/professional.yaml."""
+    """Load and validate professional.yaml. Defaults to bundled professional.yaml."""
     if path is None:
         path = _DEFAULT_DATA_PATH
     data = YAML(typ="safe").load(Path(path))
