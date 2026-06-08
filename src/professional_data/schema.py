@@ -9,6 +9,16 @@ class SchemaBaseModel(BaseModel):
     model_config: ClassVar[ConfigDict] = ConfigDict(extra="forbid")
 
 
+class StackExchangeInfo(SchemaBaseModel):
+    id: str
+    name: str
+
+
+class GoogleScholarInfo(SchemaBaseModel):
+    id: str
+    name: str
+
+
 class PersonalInfo(SchemaBaseModel):
     name: str
     email: str
@@ -17,6 +27,14 @@ class PersonalInfo(SchemaBaseModel):
     github: str | None = None
     linkedin: str | None = None
     location: str | None = None
+    first_name: str | None = None
+    last_name: str | None = None
+    gitlab: str | None = None
+    stackexchange: StackExchangeInfo | None = None
+    googlescholar: GoogleScholarInfo | None = None
+    photo: str | None = None
+    position: str | None = None
+    address: str | None = None
 
 
 class Education(SchemaBaseModel):

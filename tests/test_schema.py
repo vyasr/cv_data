@@ -12,6 +12,7 @@ from professional_data.schema import (
     Affiliation,
     Education,
     Experience,
+    GoogleScholarInfo,
     Grant,
     Honor,
     PersonalInfo,
@@ -20,6 +21,7 @@ from professional_data.schema import (
     PresentationRef,
     Service,
     Skill,
+    StackExchangeInfo,
     Summary,
 )
 
@@ -242,6 +244,53 @@ def test_personal_info_unchanged():
 
     assert info.name == "Vyas Ramasubramani"
     assert info.location == "Santa Clara, CA"
+
+
+def test_personal_info_new_optional_fields_default_to_none():
+    p = PersonalInfo(name="Test User", email="test@example.com")
+
+    assert p.first_name is None
+    assert p.last_name is None
+    assert p.gitlab is None
+    assert p.stackexchange is None
+    assert p.googlescholar is None
+    assert p.photo is None
+    assert p.position is None
+    assert p.address is None
+
+
+def test_personal_info_stackexchange_validates():
+    p = PersonalInfo(
+        name="Test",
+        email="t@t.com",
+        stackexchange={"id": "12345", "name": "TestUser"},
+    )
+
+    assert p.stackexchange == StackExchangeInfo(id="12345", name="TestUser")
+
+
+def test_personal_info_googlescholar_validates():
+    p = PersonalInfo(
+        name="Test",
+        email="t@t.com",
+        googlescholar={"id": "abc123", "name": "T. User"},
+    )
+
+    assert p.googlescholar == GoogleScholarInfo(id="abc123", name="T. User")
+
+
+def test_personal_info_stackexchange_rejects_missing_name():
+    with pytest.raises(ValidationError):
+        PersonalInfo(name="Test", email="t@t.com", stackexchange={"id": "123"})
+
+
+def test_personal_info_stackexchange_rejects_extra_fields():
+    with pytest.raises(ValidationError):
+        PersonalInfo(
+            name="Test",
+            email="t@t.com",
+            stackexchange={"id": "123", "name": "X", "url": "y"},
+        )
 
 
 @pytest.mark.parametrize("details", ["Minors: QCB", ["Minor: QCB", "Minor: CS"], None])
