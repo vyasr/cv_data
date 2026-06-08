@@ -7,6 +7,15 @@ personal_info:
   github: vyasr
   linkedin: vyas-ramasubramani
   location:
+  first_name: Vyas
+  last_name: Ramasubramani
+  gitlab: vyasr
+  stackexchange:
+    id: "2575105"
+    name: Vyas
+  googlescholar:
+    id: vyLxpbkAAAAJ
+    name: Vyas
 education:
   - id: umich-phd
     institution: University of Michigan
