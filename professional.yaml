@@ -521,7 +521,7 @@ service_leadership:
     role: Board Member
     organization: DEI Student Advisory Board
     location:
-    date: Oct 2018 - Present
+    date: Oct 2018 - Aug 2020
     notes:
   - id: chemical-engineering-graduate-society-gsac-representative
     role: GSAC Representative
@@ -727,22 +727,22 @@ affiliations:
   - id: society-of-industrial-and-applied-mathematics-siam
     organization: Society of Industrial and Applied Mathematics (SIAM)
     role:
-    date: 2018 - Present
+    date: 2018 - 2021
     notes:
   - id: american-physical-society
     organization: American Physical Society
     role:
-    date: 2016 - Present
+    date: 2016 - 2021
     notes:
   - id: american-chemical-society
     organization: American Chemical Society
     role:
-    date: 2016 - Present
+    date: 2016 - 2021
     notes:
   - id: american-institute-of-chemical-engineers-aiche
     organization: American Institute of Chemical Engineers (AIChE)
     role:
-    date: 2010 - Present
+    date: 2010 - 2021
     notes:
 wetlab_skills:
   - id: biology-techniques
