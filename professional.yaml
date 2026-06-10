@@ -220,12 +220,12 @@ work_experience:
     location: ''
     summary:
     bullets:
-      - Implemented critical algorithms to ensure Spark GPU outperforms Spark 
-        CPU on industry standard benchmarks in all cases.
+      - Tech lead for all Python dataframe development in the NVIDIA RAPIDS cuDF project.
+      - Led the design and development of zero-code-change GPU acceleration for pandas and Polars.
+      - Implemented critical algorithms for Spark GPU acceleration on industry-standard benchmarks.
+      - Developed distributed architectures to handle large-scale data processing on GPUs.
       - Spearheaded push to release packages on PyPI, including (re)writing 
         CMake build systems and architecting new DevOps processes.
-      - Redesigned Python package internals for improved performance, 
-        robustness, and flexibility.
     formatted:
     notes:
   - id: d-c-energy-llc-senior-financial-analyst
