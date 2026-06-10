@@ -827,13 +827,14 @@ presentations:
   - cite_key: gibbs2012
 bios:
   short: |
-    Vyas Ramasubramani is a software engineer at NVIDIA on the
-    [RAPIDS](https://github.com/rapidsai/) team, where he develops
-    GPU-accelerated libraries for data science and machine learning. He
-    primarily works on cuDF, a high-performance GPU DataFrame library. He
-    holds a Ph.D. in Chemical Engineering and Scientific Computing from the
-    University of Michigan, where he studied self-assembly in soft matter
-    physics, and a bachelor's degree in Chemical and Biological Engineering
-    from Princeton with certificates in Applications of
-    Computing as well as Quantitative and Computational Biology and Engineering
-    Biology.
+    Vyas Ramasubramani is a software engineer at NVIDIA on the RAPIDS team,
+    where he develops GPU-accelerated libraries for data science and machine
+    learning. He is the tech lead for the Python arm of cuDF, NVIDIA's core
+    suite of structured data processing libraries. His work includes GPU
+    acceleration for pandas and Polars as well as other projects in the broader
+    GPU data processing world. He holds a Ph.D. in Chemical Engineering and
+    Scientific Computing from the University of Michigan, where he studied
+    self-assembly in soft matter physics, and a bachelor's degree in Chemical
+    and Biological Engineering from Princeton with certificates in Applications
+    of Computing as well as Quantitative and Computational Biology and
+    Engineering Biology.
