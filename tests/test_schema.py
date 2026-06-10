@@ -454,16 +454,12 @@ def test_bios_field_is_optional_and_defaults_to_none():
     assert data.bios is None
 
 
-def test_bios_validates_with_short_and_long():
-    bios = Bios(short="Short bio.", long="Long bio with [links](http://example.com).")
+def test_bios_validates_with_short():
+    bios = Bios(short="Short bio with [links](http://example.com).")
 
-    assert bios.short == "Short bio."
-    assert bios.long == "Long bio with [links](http://example.com)."
+    assert bios.short == "Short bio with [links](http://example.com)."
 
 
-def test_bios_requires_both_short_and_long():
+def test_bios_requires_short():
     with pytest.raises(ValidationError):
-        Bios.model_validate({"short": "Only short."})
-
-    with pytest.raises(ValidationError):
-        Bios.model_validate({"long": "Only long."})
+        Bios.model_validate({})

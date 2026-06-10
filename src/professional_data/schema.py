@@ -127,7 +127,6 @@ class Summary(SchemaBaseModel):
 
 class Bios(SchemaBaseModel):
     short: str
-    long: str
 
 class PublicationRef(SchemaBaseModel):
     cite_key: str

@@ -133,10 +133,6 @@ summary:
 bios:
   short: |
     A software engineer specializing in GPU-accelerated computing.
-  long: |
-    A software engineer at NVIDIA working on [RAPIDS](https://github.com/rapidsai/).
-
-    Previously completed a Ph.D. at the University of Michigan.
 publications:
   - cite_key: Ramasubramani2020b
   - cite_key: Ramasubramani2020
