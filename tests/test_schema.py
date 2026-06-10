@@ -10,6 +10,7 @@ from ruamel.yaml import YAML
 from professional_data import ProfessionalData
 from professional_data.schema import (
     Affiliation,
+    Bios,
     Education,
     Experience,
     GoogleScholarInfo,
@@ -59,6 +60,7 @@ def test_full_valid_fixture_validates_with_all_sections_populated():
     data = ProfessionalData.model_validate(load_fixture("full_valid.yaml"))
 
     assert data.summary is not None
+    assert data.bios is not None
     assert data.research_experience
     assert data.work_experience
     assert data.skills
@@ -443,3 +445,25 @@ def test_missing_required_publication_cite_key_raises_validation_error():
 
     with pytest.raises(ValidationError):
         ProfessionalData.model_validate(payload)
+
+
+def test_bios_field_is_optional_and_defaults_to_none():
+    payload = load_fixture("minimal_valid.yaml")
+    data = ProfessionalData.model_validate(payload)
+
+    assert data.bios is None
+
+
+def test_bios_validates_with_short_and_long():
+    bios = Bios(short="Short bio.", long="Long bio with [links](http://example.com).")
+
+    assert bios.short == "Short bio."
+    assert bios.long == "Long bio with [links](http://example.com)."
+
+
+def test_bios_requires_both_short_and_long():
+    with pytest.raises(ValidationError):
+        Bios.model_validate({"short": "Only short."})
+
+    with pytest.raises(ValidationError):
+        Bios.model_validate({"long": "Only long."})

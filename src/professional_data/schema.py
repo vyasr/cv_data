@@ -125,6 +125,9 @@ class Affiliation(SchemaBaseModel):
 class Summary(SchemaBaseModel):
     text: str
 
+class Bios(SchemaBaseModel):
+    short: str
+    long: str
 
 class PublicationRef(SchemaBaseModel):
     cite_key: str
@@ -150,6 +153,7 @@ class ProfessionalData(SchemaBaseModel):
     affiliations: list[Affiliation] = Field(default_factory=list)
     wetlab_skills: list[Skill] = Field(default_factory=list)
     summary: Summary | None = None
+    bios: Bios | None = None
     publications: list[PublicationRef] = Field(default_factory=list)
     presentations: list[PresentationRef] = Field(default_factory=list)
 
